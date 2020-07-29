@@ -1,3 +1,3 @@
 # To-Do-web-app
-This project has a simple yet great UI with great features and is a user-friendly application.
-Built by using HTML, CSS, JS, Nodejs, MongoDb and Robo3T.
+This project has a simple yet great UI with features and is a user-friendly application.
+It has been built using HTML, CSS, JS, Nodejs, Express,MongoDb and Robo3T.
