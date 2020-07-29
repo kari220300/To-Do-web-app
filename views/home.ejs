@@ -1,0 +1,66 @@
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/ddd8df2e51.js" crossorigin="anonymous"></script>
+    
+	<meta name="viewport" content="Width=device-width, initial-scale=1.0">
+    <title> To Do List</title>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+</head>
+<body>
+   <div id = "outer">
+   	  <marquee><i class="far fa-calendar-check"></i>To-Do List</marquee>
+       <form action="/add" method ="POST"> 
+        
+          <section id ="s1">
+            <i class="far fa-comment"></i> <label>Description</label>
+                 <form  method="POST">
+                    <input type="text " name ="description" placeholder=" " required>
+            
+   	   	</section>
+   	   	 <section id ="s2">
+                 <label><i class="fas fa-align-justify"></i>Category</label>
+                    <input type="text " name ="category" placeholder="eg: personal, work" required>
+
+               </section>
+               
+               <section id="s5">
+                <label id="dued"><i class="far fa-calendar-alt"></i>Due Date</label>
+                <input type= "date" name="due" required >
+               </section>
+		<section id="s3">
+                <button type= "submit"> <i class="far fa-plus-square"></i>Add Task</button>
+            
+           
+        </section>
+        
+        <section id= "s4"><p><h3>Pending Tasks:</h3></p>
+                 <ol>
+                    <% for (let i of work_list) { %>
+                        <li>
+                          <section id="d3">
+                             <p><%= i.description %></p>
+                             <p><%= i.due %> </p> 
+                            </section>
+                            <div class ="delete-button">
+                                <a href="/delete-work/?id=<%= i._id %>">
+                                    <i class="far fa-trash-alt"></i>
+                                </a>
+                            </div>
+                   </li>
+                     <%} %> 
+
+                 </ol>
+        </section>
+    </form>
+    <div id="date_time">
+        <i class="fas fa-user-clock"></i> <p id="demo"></p> 
+     <script>
+         var d = new Date();
+         document.getElementById("demo").innerHTML = d;
+         </script>
+    </div>
+ 
+
+      </div> 
+    </body>
+</html>
